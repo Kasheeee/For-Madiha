@@ -86,13 +86,19 @@ p {
   line-height: 1.8;
   color: #333;
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 /* button styles */
+.btn-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .btn {
   padding: 12px 30px;
-  margin: 10px;
   border-radius: 30px;
   border: none;
   font-size: 18px;
@@ -136,7 +142,9 @@ p {
       Your beauty is not just in your face, but in your presence,<br>
       the way you make everything feel peaceful just by existing.
     </p>
-    <button class="btn yes" onclick="nextPage()">Next ➜</button>
+    <div class="btn-container">
+      <button class="btn yes" onclick="nextPage()">Next ➜</button>
+    </div>
   </div>
 
   <!-- PAGE 2 -->
@@ -147,9 +155,9 @@ p {
       Your smile is my favorite sunrise,<br>
       and your eyes carry a world I never want to leave.
     </p>
-    <div>
-      <button class="btn yes" onclick="nextPage()">Next ➜</button>
+    <div class="btn-container">
       <button class="btn no" onclick="prevPage()">← Back</button>
+      <button class="btn yes" onclick="nextPage()">Next ➜</button>
     </div>
   </div>
 
@@ -162,9 +170,9 @@ p {
       to dream bigger.<br><br>
       Madiha, you are my greatest blessing.
     </p>
-    <div>
-      <button class="btn yes" onclick="nextPage()">Next ➜</button>
+    <div class="btn-container">
       <button class="btn no" onclick="prevPage()">← Back</button>
+      <button class="btn yes" onclick="nextPage()">Next ➜</button>
     </div>
   </div>
 </div>
