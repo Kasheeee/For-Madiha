@@ -59,6 +59,8 @@ p {
   display: flex;
   gap: 20px;
   justify-content: center;
+  position: relative;
+  z-index: 100;
 }
 
 button {
@@ -69,6 +71,8 @@ button {
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
+  position: relative;
+  z-index: 100;
 }
 
 .btn-yes {
@@ -94,7 +98,9 @@ button {
 }
 
 #moveBtn {
-  position: fixed;
+  position: absolute !important;
+  width: 120px;
+  z-index: 50;
 }
 
 .heart {
@@ -102,6 +108,7 @@ button {
   font-size: 40px;
   animation: floatHeart 6s linear forwards;
   pointer-events: none;
+  z-index: 1;
 }
 
 @keyframes floatHeart {
@@ -171,16 +178,16 @@ button {
   <h1>One Last Question ❤️</h1>
   <p style="font-size: 26px;">Will you be mine for the rest of my life, Madiha?</p>
   <div class="buttons">
-    <button class="btn-no" id="moveBtn" onmouseover="moveNo()">No 💔</button>
     <button class="btn-yes" onclick="show(5)">Yes 💖</button>
   </div>
+  <button class="btn-no" id="moveBtn" onmouseover="moveNo()">No 💔</button>
 </div>
 
 <!-- PAGE 5 -->
 <div class="page final" id="p5">
   <div class="bounce">💕</div>
   <h1>She said YES! 💖</h1>
-  <p>Madiha… you just made me the happiest person alive.<br><br>Forever starts now. ���</p>
+  <p>Madiha… you just made me the happiest person alive.<br><br>Forever starts now. 💑</p>
   <div class="bounce" style="font-size: 60px; margin-top: 30px;">💕</div>
 </div>
 
