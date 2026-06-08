@@ -28,7 +28,7 @@ html, body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 40px;
+  padding: 80px 40px;
   position: absolute;
   top: 0;
   left: 0;
@@ -40,34 +40,35 @@ html, body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: #d63447;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   text-shadow: 0 0 10px rgba(255,255,255,0.8);
 }
 
 p {
-  font-size: 20px;
+  font-size: 22px;
   color: #333;
-  max-width: 700px;
-  line-height: 1.8;
-  margin-bottom: 40px;
+  max-width: 800px;
+  line-height: 2;
+  margin-bottom: 60px;
   font-weight: 500;
 }
 
 .buttons {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
   position: relative;
   z-index: 100;
+  margin-top: 30px;
 }
 
 button {
-  padding: 15px 40px;
-  font-size: 18px;
+  padding: 18px 50px;
+  font-size: 20px;
   border: none;
-  border-radius: 30px;
+  border-radius: 35px;
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
@@ -99,7 +100,7 @@ button {
 
 #moveBtn {
   position: absolute !important;
-  width: 120px;
+  width: 130px;
   z-index: 50;
 }
 
@@ -124,16 +125,19 @@ button {
 .final h1 {
   color: white;
   font-size: 4rem;
+  margin-bottom: 50px;
 }
 
 .final p {
   color: white;
-  font-size: 24px;
+  font-size: 26px;
+  margin-bottom: 50px;
 }
 
 .bounce {
   display: inline-block;
   animation: bounce 1s infinite;
+  margin: 0 20px;
 }
 
 @keyframes bounce {
@@ -176,7 +180,7 @@ button {
 <!-- PAGE 4 -->
 <div class="page" id="p4">
   <h1>One Last Question ❤️</h1>
-  <p style="font-size: 26px;">Will you be mine for the rest of my life, Madiha?</p>
+  <p style="font-size: 28px; margin-bottom: 70px;">Will you be mine for the rest of my life, Madiha?</p>
   <div class="buttons">
     <button class="btn-yes" onclick="show(5)">Yes 💖</button>
   </div>
@@ -185,10 +189,10 @@ button {
 
 <!-- PAGE 5 -->
 <div class="page final" id="p5">
-  <div class="bounce">💕</div>
+  <div class="bounce" style="font-size: 80px;">💕</div>
   <h1>She said YES! 💖</h1>
   <p>Madiha… you just made me the happiest person alive.<br><br>Forever starts now. 💑</p>
-  <div class="bounce" style="font-size: 60px; margin-top: 30px;">💕</div>
+  <div class="bounce" style="font-size: 80px;">💕</div>
 </div>
 
 <script>
