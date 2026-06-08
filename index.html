@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Madiha ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: black;
+  overflow: hidden;
+  color: white;
+}
+
+/* cinematic fade background */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #1a1a1a, black);
+  z-index: 0;
+}
+
+/* story container */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  opacity: 0;
+  transition: opacity 2s ease;
+  z-index: 2;
+}
+
+.active {
+  opacity: 1;
+}
+
+/* text styling */
+h1 {
+  color: #ff4d6d;
+  font-size: 2.5rem;
+  text-shadow: 0 0 20px #ff4d6d;
+}
+
+p {
+  font-size: 20px;
+  max-width: 700px;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* buttons */
+.btn {
+  padding: 12px 30px;
+  margin: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+  box-shadow: 0 0 20px #ff4d6d;
+}
+
+.no {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  position: absolute;
+}
+
+/* floating hearts */
+.heart {
+  position: absolute;
+  color: rgba(255, 77, 109, 0.6);
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- SLIDE 1 -->
+<div class="slide active" id="s1">
+  <div>
+    <h1>For Madiha ❤️</h1>
+    <p>
+      There are feelings that words can never fully explain…<br>
+      but today, I still try to write them for you.
+    </p>
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" id="s2">
+  <div>
+    <h1>I Love You ❤️</h1>
+    <p>
+      I don't just love you…<br>
+      I love the way you exist in my life.<br>
+      The way your presence turns ordinary moments into memories.
+    </p>
+  </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide" id="s3">
+  <div>
+    <h1>Time With You ✨</h1>
+    <p>
+      Every second spent by your side feels like a scene from a beautiful movie.<br>
+      I never want those moments to end… ever.
+    </p>
+  </div>
+</div>
+
+<!-- FINAL SLIDE -->
+<div class="slide" id="s4">
+  <div>
+    <h1>One Last Question ❤️</h1>
+    <p>Will you be mine for the rest of my life, Madiha?</p>
+
+    <button class="btn yes" onclick="yes()">Yes 💖</button>
+    <button class="btn no" id="noBtn">No 💔</button>
+  </div>
+</div>
+
+<script>
+let index = 1;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(i) {
+  slides.forEach(s => s.classList.remove("active"));
+  slides[i].classList.add("active");
+}
+
+setInterval(() => {
+  if(index < slides.length - 1){
+    index++;
+    showSlide(index);
+  }
+}, 5000);
+
+// floating hearts
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤";
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.fontSize = (10 + Math.random() * 20) + "px";
+  heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 300);
+
+// moving NO button
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * (window.innerWidth - 120);
+  const y = Math.random() * (window.innerHeight - 120);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
+// YES result
+function yes() {
+  document.body.innerHTML = `
+    <div style="
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      background: radial-gradient(circle, #2a000f, black);
+      color:white;
+      text-align:center;
+      font-family:Georgia;
+    ">
+      <h1 style="color:#ff4d6d; font-size:3rem; text-shadow:0 0 25px #ff4d6d;">
+        She said YES ❤️
+      </h1>
+      <p style="font-size:20px; opacity:0.8;">
+        Madiha… you just made my world complete.
+      </p>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
