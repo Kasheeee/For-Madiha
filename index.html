@@ -122,11 +122,51 @@ p {
   background: transparent;
   border: 2px solid #333;
   color: #333;
+  position: relative;
 }
 
 .no:hover {
   background: #333;
   color: white;
+}
+
+/* Moving NO button */
+#noBtn {
+  position: fixed;
+  transition: all 0.1s ease;
+}
+
+/* Final page styles */
+.final-page {
+  background: linear-gradient(135deg, #ff6b9d, #c06c84) !important;
+  justify-content: flex-start !important;
+  padding-top: 50px !important;
+}
+
+.final-content {
+  animation: slideUp 1s ease forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.celebration {
+  font-size: 100px;
+  animation: bounce 1s ease infinite;
+  margin: 20px 0;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 </style>
 </head>
@@ -175,6 +215,31 @@ p {
       <button class="btn yes" onclick="nextPage()">Next ➜</button>
     </div>
   </div>
+
+  <!-- PAGE 4 - THE BIG QUESTION -->
+  <div class="card" id="page4">
+    <h1>One Last Question ❤️</h1>
+    <p style="font-size: 24px; margin-bottom: 50px;">
+      Will you be mine for the rest of my life, Madiha?
+    </p>
+    <div class="btn-container">
+      <button class="btn no" id="noBtn" onmouseover="moveButton()">No 💔</button>
+      <button class="btn yes" onclick="sayYes()">Yes 💖</button>
+    </div>
+  </div>
+
+  <!-- PAGE 5 - FINAL YES -->
+  <div class="card final-page" id="page5">
+    <div class="final-content">
+      <div class="celebration">💕</div>
+      <h1 style="font-size: 3.5rem; color: white;">She said YES! 💖</h1>
+      <p style="color: white; font-size: 24px;">
+        Madiha… you just made me the happiest person alive.<br><br>
+        Forever starts now. 💑
+      </p>
+      <div class="celebration">💕</div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -191,7 +256,7 @@ function createHeart() {
 setInterval(createHeart, 500);
 
 let currentPage = 1;
-const totalPages = 3;
+const totalPages = 5;
 
 function nextPage() {
   if (currentPage < totalPages) {
@@ -207,6 +272,24 @@ function prevPage() {
     currentPage--;
     document.getElementById('page' + currentPage).classList.add('active');
   }
+}
+
+// Moving NO button
+const noBtn = document.getElementById('noBtn');
+
+function moveButton() {
+  const randomX = Math.random() * (window.innerWidth - 150);
+  const randomY = Math.random() * (window.innerHeight - 150);
+  
+  noBtn.style.left = randomX + 'px';
+  noBtn.style.top = randomY + 'px';
+}
+
+// YES button handler
+function sayYes() {
+  document.getElementById('page4').classList.remove('active');
+  document.getElementById('page5').classList.add('active');
+  currentPage = 5;
 }
 </script>
 
